@@ -1,0 +1,36 @@
+{
+  "name": "snarkswap-circuit",
+  "version": "0.0.0",
+  "description": "Circuits for snarkswap",
+  "main": "index.js",
+  "repository": "https://github.com/0xBeaver/snarkswap-circuit",
+  "author": "0xBeaver",
+  "license": "GPL-3.0",
+  "private": false,
+  "scripts": {
+    "test": "mocha --max-old-space-size=4000",
+    "-------------------------- These are binary wrappers": "------------------------------",
+    "snarkjs": "snarkjs",
+    "circom": "circom",
+    "-------------------------- Run these scripts": "--------------------------------------",
+    "setup": "yarn compile; yarn sample-phase-1; yarn sample-phase-2; yarn gen-vk",
+    "compile": "yarn compile-eddsa; yarn compile-swap",
+    "sample-phase-1": "./scripts/sample-phase-1.sh",
+    "sample-phase-2": "./scripts/sample-phase-2.sh",
+    "gen-vk": "./scripts/gen-vk.sh",
+    "-------------------------- These are script modules": "-------------------------------",
+    "compile-eddsa": "cd artifacts && circom ../circuits/eddsa.circom --r1cs --wasm --sym -v && cd ..",
+    "compile-swap": "cd artifacts && circom ../circuits/swap.circom --r1cs --wasm --sym -v && cd .."
+  },
+  "devDependencies": {
+    "chai": "^4.3.1",
+    "circom": "^0.5.38",
+    "ffjavascript": "^0.2.35",
+    "mocha": "^8.3.0",
+    "snarkjs": "^0.3.59",
+    "web3-utils": "^1.3.4"
+  },
+  "dependencies": {
+    "circomlib": "^0.4.1"
+  }
+}
