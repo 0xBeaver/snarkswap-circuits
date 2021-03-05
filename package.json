@@ -1,5 +1,5 @@
 {
-  "name": "snarkswap-circuit",
+  "name": "@snarkswap/circuit",
   "version": "0.0.0",
   "description": "Circuits for snarkswap",
   "main": "index.js",
