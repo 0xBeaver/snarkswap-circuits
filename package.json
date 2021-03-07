@@ -19,8 +19,8 @@
     "sample-phase-2": "./scripts/sample-phase-2.sh",
     "gen-vk": "./scripts/gen-vk.sh",
     "-------------------------- These are script modules": "-------------------------------",
-    "compile-eddsa": "cd artifacts && circom ../circuits/eddsa.circom --r1cs --wasm --sym -v && cd ..",
-    "compile-swap": "cd artifacts && circom ../circuits/swap.circom --r1cs --wasm --sym -v && cd .."
+    "compile-eddsa": "mkdir -p artifacts && cd artifacts && circom ../circuits/eddsa.circom --r1cs --wasm --sym -v && cd ..",
+    "compile-swap": "mkdir -p artifacts && cd artifacts && circom ../circuits/swap.circom --r1cs --wasm --sym -v && cd .."
   },
   "devDependencies": {
     "chai": "^4.3.1",
