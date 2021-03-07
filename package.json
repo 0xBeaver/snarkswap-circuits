@@ -20,7 +20,11 @@
     "gen-vk": "./scripts/gen-vk.sh",
     "-------------------------- These are script modules": "-------------------------------",
     "compile-eddsa": "mkdir -p artifacts && cd artifacts && circom ../circuits/eddsa.circom --r1cs --wasm --sym -v && cd ..",
-    "compile-swap": "mkdir -p artifacts && cd artifacts && circom ../circuits/swap.circom --r1cs --wasm --sym -v && cd .."
+    "compile-swap": "mkdir -p artifacts && cd artifacts && circom ../circuits/swap.circom --r1cs --wasm --sym -v && cd ..",
+    "-------------------------- Sample contract generator": "-------------------------------",
+    "gen-contracts": "mkdir -p artifacts && yarn gen-eddsa-contract && yarn gen-swap-contract",
+    "gen-eddsa-contract": "snarkjs zkey export solidityverifier ptau/phase2/eddsa_final.zkey artifacts/eddsaVerifier.sol",
+    "gen-swap-contract": "snarkjs zkey export solidityverifier ptau/phase2/swap_final.zkey artifacts/swapVerifier.sol"
   },
   "devDependencies": {
     "chai": "^4.3.1",
