@@ -7,7 +7,7 @@ const circomlib = require("circomlib");
 const eddsa = circomlib.eddsa;
 const assert = chai.assert;
 
-describe("EdDSA Poseidon test", function () {
+describe("EdDSA Poseidon SNARK test", function () {
   let circuit;
   let bn128;
   let Fr;
